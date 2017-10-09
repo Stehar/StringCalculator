@@ -1,0 +1,6 @@
+#!/bin/bash
+rm -r classes
+mkdir classes
+./bin/compile
+./bin/compiletest
+./bin/runtest

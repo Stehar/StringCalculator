@@ -1,0 +1,2 @@
+#!/bin/bash
+javac -cp "src/resources/junit-4.12.jar;classes" src/test/java/is/ru/stringcalculator/TestCalculator.java -d classes
