@@ -17,4 +17,8 @@ public class TestCalculator{
 	public void testTwoNumber(){
 		assertEquals(3, Calculator.add("1,2"));
 	}
+	@Test
+	public void testTwoDelimeters(){
+		assertEquals(6, Calculator.add("1,2/n3"));
+	}
 }
