@@ -11,7 +11,7 @@ public class Calculator{
 			}
 			else{
 				if(ifContains(text)){
-					String numbers[] = text.split("/n|,");
+					String numbers[] = splitString(text);
 					negativeException(numbers);
 					return sum(numbers);
 				}
@@ -22,6 +22,11 @@ public class Calculator{
 					return Integer.parseInt(text);
 				}
 		}
+	}
+
+	private static String[] splitString(String text){
+		String numbers[] = text.split("/n|,");
+		return numbers;
 	}
 
 	private static int toInt(String number){
