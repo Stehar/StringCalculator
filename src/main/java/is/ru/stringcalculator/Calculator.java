@@ -25,8 +25,16 @@ public class Calculator{
 	}
 
 	private static String[] splitString(String text){
-		String numbers[] = text.split("/n|,");
-		return numbers;
+
+			String delimeter = "/n|,";
+			if(text.startsWith("//")){
+				int posBegin = text.indexOf("//")+2;
+				int posEnd = posBegin + 1;
+				delimeter = delimeter + "|" + text.substring(posBegin, posEnd);
+				text = text.substring(posBegin+2);
+			}
+			String numbers[] = text.split(delimeter);
+ 			return numbers;
 	}
 
 	private static int toInt(String number){
@@ -44,7 +52,7 @@ public class Calculator{
 	}
 
 	private static boolean ifContains(String text){
-		if(text.contains(",") || text.contains("/n")){
+		if(text.contains(",") || text.contains("/n") || text.contains("//")){
 			return true;
 		}
 		return false;

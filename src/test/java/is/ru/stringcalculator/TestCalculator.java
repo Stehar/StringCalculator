@@ -36,4 +36,9 @@ public class TestCalculator{
 	public void testIfLessThenOneKSingle(){
 		assertEquals(0, Calculator.add("1002"));
 	}
+
+	@Test
+	public void testNewDelimeter(){
+		assertEquals(3, Calculator.add("//;\n1;2"));
+	}
 }
