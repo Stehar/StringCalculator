@@ -16,6 +16,9 @@ public class Calculator{
 					return sum(numbers);
 				}
 				else{
+					if(Integer.parseInt(text) >= 1000){
+						return 0;
+					}
 					return Integer.parseInt(text);
 				}
 		}
@@ -28,7 +31,9 @@ public class Calculator{
 	private static int sum(String numbers[]){
 		int sum = 0;
 		for(String number : numbers){
-			sum = sum + toInt(number);
+			if(toInt(number) < 1000){
+				sum = sum + toInt(number);
+			}
 		}
 		return sum;
 	}
@@ -41,14 +46,14 @@ public class Calculator{
 	}
 
 	private static void negativeException(String numbers[]){
-		List<Integer> negatives = new ArrayList<Integer>();
+		List<Integer> negNum = new ArrayList<Integer>();
 			 for (String number : numbers) {
 					 if (toInt(number) < 0) {
-							 negatives.add(toInt(number));
+							 negNum.add(toInt(number));
 					 }
 			 }
-			 if (!negatives.isEmpty()) {
-					 throw new IllegalArgumentException("Negatives not allowed: " + negatives);
+			 if (!negNum.isEmpty()) {
+					 throw new IllegalArgumentException("Negatives not allowed: " + negNum);
 			 }
 	}
 

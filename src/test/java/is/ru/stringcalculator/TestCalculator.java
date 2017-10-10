@@ -26,4 +26,14 @@ public class TestCalculator{
 	public void testNegativeException(){
 		assertEquals(9, Calculator.add("-6,6,4,5"));
 	}
+
+	@Test
+	public void testIfLessThenOneK(){
+		assertEquals(2, Calculator.add("1002/n2"));
+	}
+
+	@Test
+	public void testIfLessThenOneKSingle(){
+		assertEquals(0, Calculator.add("1002"));
+	}
 }
