@@ -21,4 +21,9 @@ public class TestCalculator{
 	public void testTwoDelimeters(){
 		assertEquals(6, Calculator.add("1,2/n3"));
 	}
+
+	@Test(expected = IllegalArgumentException.class)
+	public void testNegativeException(){
+		assertEquals(9, Calculator.add("-6,6,4,5"));
+	}
 }
